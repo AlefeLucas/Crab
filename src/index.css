@@ -11,7 +11,16 @@ code {
   monospace;
 }
 
+html {
+  margin: 0;
+  height: 100%
+}
 body{
-  background: url("images/login/fundo.jpg") no-repeat;
+  background-image: url("images/login/fundo.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  height: 100%
 }
 
