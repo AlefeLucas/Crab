@@ -1,0 +1,208 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  text-decoration: none;
+}
+
+/** grid layout */
+.wrapper {
+  /* display: grid;
+  grid-template-columns: 325px 1fr;
+  grid-template-rows: 372px 1fr;
+  grid-template-areas: "sidebar header"
+                      "sidebar content";
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; */
+  /* transition: 0.5s; */
+}
+
+/** header */
+.header {
+  background-color: #9c32ff;
+  /* grid-area: header; */
+  height: 372px;
+  margin-left: 325px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
+}
+
+.header > img {
+  bottom: -100%;
+  margin: auto;
+  position: absolute;
+  top: -100%;
+  width: 100%;
+}
+
+.header > p {
+  color: white;
+  font-size: 150px;
+  left: 50%;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/** aside */
+.sidebar {
+  background-color: #21203F;
+  font-size: 21px;
+  /* grid-area: sidebar; */
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  transition: 0.5s;
+  width: 325px;
+  z-index: 1;
+}
+
+/* profile section */
+.profile-section {
+  color: white;
+  padding: 25px;
+  overflow: hidden;
+}
+
+.img-profile {
+  border: 4px solid #323153;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+/* float collapse button section */
+.float-collapse {
+  background: #14ABFD;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: white;
+  height: 40px;
+  position: absolute;
+  margin-left: 305px;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+  width: 40px;
+  z-index: 1;
+}
+
+.float-collapse-image {
+  position: relative;
+  top: 50%;
+  transform: translateY(-75%);
+}
+
+/* links section */
+.links-section {
+  margin: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+.links-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.links-list > li {
+  background-color: #323153;
+}
+
+.links-list > li:hover {
+  background-color: #26253f;
+}
+
+.links-list > li img {
+  margin-left: 16px;
+}
+
+.links-list > li span {
+  color: white;
+  padding-left: 6px;
+}
+
+.links-list > li a {
+  display: inline-block;
+  height: 100%;
+  padding: 12px 0px;
+  width: 100%;
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
+
+.box-shadow {
+  box-shadow: 1px 1px 25px rgb(121, 121, 121);
+}
+
+/* faction section */
+.faction-section {
+  font-size: 100px;
+}
+
+/** content */
+.content {
+  background: #E4E4E4;
+  margin-left: 325px;
+  transition: 0.5s;
+  /* grid-area: content; */
+}
+
+/* search section */
+.search {
+  background-color: #CECECE;
+  padding: 10px 15px;
+  position: sticky;
+  position: -webkit-sticky;
+  text-align: right;
+  top: 0;
+}
+
+.search > input {
+  border: 1px solid transparent;
+  border-radius: 10px 0px 0px 10px;
+  font-size: 20px;
+  padding: 10px;
+  width: 300px;
+  vertical-align: middle;
+}
+
+.search span {
+  background: white;
+  border: 1px solid transparent;
+  border-radius: 0px 10px 10px 0px;
+  font-size: 20px;
+  padding: 13.5px 10px;
+  vertical-align: middle;
+}
+
+/* cards section */
+.all-cards {
+  padding: 5px 25px;
+}
+
+.card {
+  background: #FFFFFF;
+  box-shadow: 3px 6px 15px rgb(121, 121, 121);
+  margin: 50px 0px;
+  padding: 25px;
+}
+
+.card-title {
+  color: #14ABFD;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  color: #323153;
+  font-size: 24px;
+}
