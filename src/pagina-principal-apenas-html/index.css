@@ -5,7 +5,7 @@
 }
 
 /** grid layout */
-.wrapper {
+/* .wrapper { */
   /* display: grid;
   grid-template-columns: 325px 1fr;
   grid-template-rows: 372px 1fr;
@@ -14,7 +14,7 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px; */
   /* transition: 0.5s; */
-}
+/* } */
 
 /** header */
 .header {
@@ -70,6 +70,10 @@
   border-radius: 50%;
   height: 100px;
   width: 100px;
+}
+
+.profile-mobile {
+  display: none;
 }
 
 /* float collapse button section */
@@ -269,4 +273,78 @@
 .card-text {
   color: #323153;
   font-size: 24px;
+}
+
+
+/** mobile */
+@media screen and (max-width: 850px) {
+  /** header */
+  .header {
+    background: transparent;
+    height: 150px;
+    margin-left: 0px;
+    margin-top: 80px;
+    width: 100%;
+  }
+
+  .header > p {
+    font-size: 75px;
+  }
+
+  .sidebar {
+    height: 80px;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* profile section */
+  .profile-section {
+    padding: 10px 25px;
+    text-align: left;
+  }
+
+  .profile-section p {
+    display: none;
+  }
+
+  .profile-mobile {
+    display: initial;
+    font-size: 30px;
+    font-weight: 600;
+    left: 50%;
+    position: absolute;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+  
+  .img-profile {
+    height: 50px;
+    width: 50px;
+  }
+  
+  /* float collapse button section */
+  .float-collapse {
+    display: none;
+  }
+
+  /* modal section */
+  .modal-float {
+    top: 15%;
+    right: 30%;
+  }
+  
+  /** content */
+  .content {
+    margin-left: 0px;
+  }
+
+  /* search section */
+  .search {
+    text-align: center;
+  }
+
+  .search > input {
+    width: 75%;
+  }
 }
