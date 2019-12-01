@@ -49,7 +49,9 @@ window.onclick = function(e) {
   if (!modal.contains(e.target)) {
     if (profile.contains(e.target)) {
       if (this.modal.style.marginTop == "-400px" || this.modal.style.marginTop == "") {
-        this.modal.style.marginTop = "0px";
+        if (!document.getElementById("profile-mobile").contains(e.target)) {
+          this.modal.style.marginTop = "0px";
+        }
       } else {
         if (!document.getElementById("profile-mobile").contains(e.target)) {
           this.modal.style.marginTop = "-400px";
