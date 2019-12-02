@@ -5,6 +5,8 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -15,12 +17,10 @@ html {
   margin: 0;
   height: 100%
 }
-body{
-  background-image: url("images/login/fundo.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 0;
-  height: 100%
+#root {
+  height: 100%;
+
 }
+
+
 
