@@ -1,0 +1,33 @@
+.links-list > li {
+  background-color: #323153;
+}
+
+.links-list > li:hover {
+  background-color: #26253f;
+}
+
+.links-list > li img {
+  margin-left: 16px;
+  vertical-align: middle;
+}
+
+.links-list > li span {
+  color: white;
+  padding-left: 6px;
+  vertical-align: middle;
+}
+
+.links-list > li a {
+  display: inline-block;
+  height: 100%;
+  padding: 12px 0px;
+  width: 100%;
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.box-shadow {
+  box-shadow: 1px 1px 25px rgb(121, 121, 121);
+}

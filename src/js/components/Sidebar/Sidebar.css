@@ -1,0 +1,52 @@
+.sidebar {
+  background-color: #21203F;
+  font-size: 21px;
+  /* grid-area: sidebar; */
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  transition: 0.5s;
+  width: 325px;
+  z-index: 1;
+}
+
+/* float collapse button section */
+.float-collapse {
+  background: #14ABFD;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  position: absolute;
+  margin-left: 305px;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+  width: 40px;
+  z-index: 1;
+}
+
+.float-collapse-image {
+  position: relative;
+  top: 50%;
+  transform: translateY(-75%);
+}
+
+/* links section */
+.links-section {
+  margin: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+.links-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* faction section */
+.faction-section {
+  font-size: 100px;
+}

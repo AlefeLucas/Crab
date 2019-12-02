@@ -14,12 +14,9 @@ export class Login extends Component {
     constructor(props) {
         super(props);
 
-
         this.state = {
             select: "open"
         }
-
-
     }
 
     handleSignIn(e) {
@@ -36,8 +33,6 @@ export class Login extends Component {
             alert('Login ou senha incorreto(s).');
         }
     }
-
-
 
     render() {
 

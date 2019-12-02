@@ -1,25 +1,19 @@
-import React, {Component} from 'react'
+import React from 'react';
+import Sidebar from '../principal/components/Sidebar/Sidebar.js';
+import Header from '../principal/components/Header/Header.js';
+import Content from '../principal/components/Content/Content.js';
+import Modal from '../principal/components/Sidebar/Modal/Modal.js';
+import '../principal/App.css';
 
-export class Home extends Component {
-
-    constructor(props) {
-        super(props);
-
-    }
-
-
-    render() {
-        return (
-            <React.Fragment>
-                <div className="home">
-                    <div>
-                        <h1>Home</h1>
-                        <p>Dummy home</p>
-                    </div>
-                </div>
-            </React.Fragment>
-        )
-    }
+function Home() {
+  return (
+    <div className="home">
+      <Sidebar />
+      <Header />
+      <Content />
+      <Modal />
+    </div>
+  );
 }
 
 export default Home;
