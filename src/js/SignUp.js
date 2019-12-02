@@ -7,11 +7,19 @@ import userIcon from '../images/login/iconuser.svg';
 
 import keyIcon from '../images/login/iconkey.svg';
 import factionIcon from '../images/login/iconfaction.svg';
-
-import Home from './Home.js';
 import {Link} from 'react-router-dom'
 
 export class SignUp extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+        };
+
+
+    }
+
     render() {
 
 
@@ -62,7 +70,7 @@ export class SignUp extends Component {
                                 <div className="area-login">
 
                                     <img src={factionIcon} className="form-icon"/>
-                                    <select  required className="area-text-login" name="example">
+                                    <select required className="area-text-login" name="example">
                                         <option value="" disabled selected>Facção...</option>
                                         <option value="jedi">Jedi</option>
                                         <option value="sith">Sith</option>

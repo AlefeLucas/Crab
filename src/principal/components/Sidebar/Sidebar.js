@@ -4,10 +4,22 @@ import ListItem from './ListItem/ListItem.js';
 import './Sidebar.css';
 
 export class Sidebar extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            user: this.props.user
+        };
+        console.log("sidebar");
+        console.log(this.props);
+
+    }
+
   render() {
     return (
       <aside className="sidebar" id="sidebar">
-        <Profile />
+        <Profile user={this.props.user} />
         <div className="links-section">
           <div className="float-collapse" id="float-collapse">
             <img src={require("./../../images/icon-material-keyboard-arrow-left.png")}

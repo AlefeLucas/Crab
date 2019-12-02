@@ -10,6 +10,12 @@ import Home from './Home.js';
 import {Link} from 'react-router-dom'
 
 export class Forgot extends Component {
+
+    handleSendLink  (e){
+        e.preventDefault();
+        alert("Um link foi enviado ao seu email.");
+    };
+
     render() {
 
 
@@ -28,7 +34,7 @@ export class Forgot extends Component {
                                 </div>
 
                             </div>
-                            <form className="form-login">
+                            <form className="form-login"  onSubmit={this.handleSendLink.bind(this)}>
                                 <div className="area-login">
 
                                     <img src={userIcon} className="form-icon"/>

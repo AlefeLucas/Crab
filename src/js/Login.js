@@ -15,8 +15,9 @@ export class Login extends Component {
         super(props);
 
         this.state = {
-            select: "open"
-        }
+        };
+
+        console.log(this.props);
     }
 
     handleSignIn(e) {
@@ -28,6 +29,7 @@ export class Login extends Component {
         let user = defaultUsers.filter(value => (value.email === typedLogin || value.username === typedLogin) && value.password === typedPassword);
 
         if (user.length) {
+            this.props.logUser(user[0]);
             this.props.history.push('/home');
         } else {
             alert('Login ou senha incorreto(s).');
