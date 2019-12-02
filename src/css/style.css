@@ -16,39 +16,28 @@
 
 .login .superlogin {
     width: 300px;
-
+    margin: auto auto;
     display: flex;
     flex-direction: column;
 }
 
-
-
-@media screen and (min-width: 670px) and (min-height: 550px) {
-    .login .superlogin {
-        margin: 15% auto;
-    }
+.login .clear {
+    clear: both;
+    height: 20%;
 }
 
-@media screen and (max-width: 670px) and (min-height: 550px) {
-    .login .superlogin {
-        margin: 45% auto;
-    }
-}
 
-@media screen and (max-height: 550px) and (max-width: 670px) {
+@media screen and (max-height: 580px) {
     .login .logo {
         visibility: hidden
     }
-    .login .superlogin {
-        margin: 5% auto;
+
+    .login .clear {
+
+        height: 5%;
     }
 }
 
-@media screen and (max-height: 550px) and (min-width: 670px) {
-    .login .superlogin {
-        margin: 5% auto;
-    }
-}
 
 .login .logo {
     position: absolute;
@@ -85,8 +74,12 @@
     padding-left: 25px;
     width: 100%;
     font-size: 10pt;
-
 }
+
+.login select:invalid {
+    color: #757575;
+}
+
 
 .login .form-icon {
     position: absolute;
@@ -96,9 +89,6 @@
     margin-top: 10px;
 }
 
-.login .clear {
-    clear: both;
-}
 
 .login #logo-ioasys {
     margin: 10px 10px;
@@ -108,14 +98,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 99%;
+    width: 100%;
     background: none;
-    /*
-    border: 1px solid yellow;
-     */
 }
 
 .login .possibilidades-login a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.login .retorno {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    background: none;
+}
+
+.login .retorno a {
     text-decoration: none;
     color: #fff;
     font-size: 0.8em;
