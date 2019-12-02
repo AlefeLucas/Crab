@@ -1,0 +1,63 @@
+/* modal section */
+.modal {
+  background: white;
+  color: black;
+  left: 25px;
+  margin-top: -400px;
+  padding: 20px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  transition: 0.5s;
+  width: 225px;
+  z-index: 1;
+}
+
+.modal-float {
+  background: #CFCFCF;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  padding: 8px;
+  position: absolute;
+  top: 25%;
+  right: 25%;
+}
+
+.modal > p {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0px 35px;
+}
+
+.modal-button {
+  background: white;
+  border: 2px solid gray;
+  border-radius: 25px;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 15px 0px;
+  padding: 5px 15px;
+  text-align: center;
+  text-align-last: center;
+  width: 100%;
+}
+
+.modal-button {
+  background: white;
+  border: 2px solid gray;
+  border-radius: 25px;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 15px 0px;
+  padding: 5px 15px;
+  text-align-last: center;
+  width: 100%;
+}
+
+.modal-button.blue {
+  background: #21203F;
+  border: 2px solid transparent;
+  color: white;
+}
