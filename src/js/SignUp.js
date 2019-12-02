@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 import sith from '../images/login/sith.svg';
 import cacadores from '../images/login/bountyhunter.svg';
 import jedi from '../images/login/jedi.svg';
+import emailIcon from '../images/login/iconemail.svg';
 import userIcon from '../images/login/iconuser.svg';
+
 import keyIcon from '../images/login/iconkey.svg';
 import factionIcon from '../images/login/iconfaction.svg';
 
@@ -37,6 +39,12 @@ export class SignUp extends Component {
 
                                     <img src={userIcon} className="form-icon"/>
                                     <input className="area-text-login" type="text" name="email"
+                                           placeholder="Username"/>
+                                </div>
+                                <div className="area-login">
+
+                                    <img src={emailIcon} className="form-icon"/>
+                                    <input className="area-text-login" type="text" name="email"
                                            placeholder="Email"/>
                                 </div>
                                 <div className="area-login">
@@ -63,8 +71,8 @@ export class SignUp extends Component {
 
                                     </select>
                                 </div>
-                                <Link to={"/home"}>
-                                    < input id="botao-login" type="submit" value="Entrar"/>
+                                <Link to={"/"}>
+                                    < input id="botao-login" type="submit" value="Cadastrar"/>
                                 </Link>
                             </form>
                         </div>

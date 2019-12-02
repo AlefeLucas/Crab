@@ -38,7 +38,6 @@
     }
 }
 
-
 .login .logo {
     position: absolute;
     float: right;
@@ -141,5 +140,6 @@
     padding: 10px;
     align-items: center;
     border: black;
+    font-weight: bold;
     border-radius: 5px;
 }
