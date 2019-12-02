@@ -5,11 +5,41 @@ import jedi from '../images/login/jedi.svg';
 import userIcon from '../images/login/iconuser.svg';
 import keyIcon from '../images/login/iconkey.svg';
 import Home from './Home.js';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import faction, {defaultUsers} from './Helper.js';
 
 export class Login extends Component {
-    render() {
 
+
+    constructor(props) {
+        super(props);
+
+
+        this.state = {
+            select: "open"
+        }
+
+
+    }
+
+    handleSignIn(e) {
+        e.preventDefault();
+        let typedLogin = this.refs.login.value;
+        let typedPassword = this.refs.password.value;
+        console.log(this.state);
+        console.log("Login: " + typedLogin + " Senha: " + typedPassword);
+        let user = defaultUsers.filter(value => (value.email === typedLogin || value.username === typedLogin) && value.password === typedPassword);
+
+        if (user.length) {
+            this.props.history.push('/home');
+        } else {
+            alert('Login ou senha incorreto(s).');
+        }
+    }
+
+
+
+    render() {
 
         return (
             <React.Fragment>
@@ -17,7 +47,7 @@ export class Login extends Component {
                 <div className="login">
                     <img className="logo" id="logo-ioasys" src="https://www.ioasys.com.br/images/logo-black.svg"
                          alt="Logo iOasys"/>
-                         <div className="clear"/>
+                    <div className="clear"/>
                     <div className="superlogin">
                         <div className="caixa-login">
                             <div className="cabecalho-login">
@@ -30,22 +60,21 @@ export class Login extends Component {
                                     <img className="imagens-login-cacadores" src={cacadores} alt="Logo sith"/>
                                 </div>
                             </div>
-                            <form className="form-login">
+                            <form className="form-login" onSubmit={this.handleSignIn.bind(this)}>
                                 <div className="area-login">
 
                                     <img src={userIcon} className="form-icon"/>
                                     <input className="area-text-login" type="text" name="email"
-                                           placeholder="Username/Email"/>
+                                           placeholder="Username/Email" ref="login"/>
                                 </div>
                                 <div className="area-login">
                                     <img src={keyIcon} className="form-icon"/>
 
-                                    <input id="password-text" className="area-text-login" type="password" name="senha"
+                                    <input id="password-text" className="area-text-login" ref="password" type="password"
+                                           name="senha"
                                            placeholder="Senha"/>
                                 </div>
-                                <Link to={"/home"}>
-                                    < input id="botao-login" type="submit" value="Entrar"/>
-                                </Link>
+                                <input id="botao-login" type="submit" value="Entrar"/>
                             </form>
                         </div>
                         <div className="possibilidades-login">

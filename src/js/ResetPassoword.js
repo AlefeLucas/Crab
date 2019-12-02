@@ -28,7 +28,7 @@ export class SignUp extends Component {
                                 <div>
                                     <h2>Redefinir Senha</h2>
                                 </div>
-                                
+
                             </div>
                             <form className="form-login">
 
