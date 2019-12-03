@@ -6,7 +6,6 @@ import userIcon from '../images/login/iconuser.svg';
 import keyIcon from '../images/login/iconkey.svg';
 import factionIcon from '../images/login/iconfaction.svg';
 
-import Home from './Home.js';
 import {Link} from 'react-router-dom'
 
 export class Forgot extends Component {

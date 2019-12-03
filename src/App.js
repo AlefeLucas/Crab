@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Login from './js/Login.js';
-import Home from './js/Home.js';
+import Home from './principal/Home.js';
 import SignUp from "./js/SignUp.js";
 import Forgot from "./js/Forgot.js";
 import ResetPassword from "./js/ResetPassoword.js";
@@ -26,6 +26,7 @@ class App extends Component {
 
     render() {
         return (
+
             <Router >
                 <Route exact path="/"  render={(props) => <Login {...props} logUser={this.logUser}/>} />
                 <Route exact path="/signup" render={(props) => <SignUp {...props} />} />

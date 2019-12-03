@@ -4,6 +4,7 @@ export const faction = {
     BOUNTY_HUNTER: "bountyHunter"
 };
 
+
 export const defaultUsers =
     [
         {

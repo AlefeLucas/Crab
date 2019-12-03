@@ -4,7 +4,6 @@ import cacadores from '../images/login/bountyhunter.svg';
 import jedi from '../images/login/jedi.svg';
 import userIcon from '../images/login/iconuser.svg';
 import keyIcon from '../images/login/iconkey.svg';
-import Home from './Home.js';
 import {Link} from 'react-router-dom';
 import faction, {defaultUsers} from './Helper.js';
 
@@ -33,6 +32,7 @@ export class Login extends Component {
             this.props.history.push('/home');
         } else {
             alert('Login ou senha incorreto(s).');
+
         }
     }
 
