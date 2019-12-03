@@ -5,7 +5,6 @@ import jedi from '../images/login/jedi.svg';
 import userIcon from '../images/login/iconuser.svg';
 import keyIcon from '../images/login/iconkey.svg';
 import {Link} from 'react-router-dom';
-import faction, {defaultUsers} from './Helper.js';
 
 export class Login extends Component {
 
@@ -16,6 +15,7 @@ export class Login extends Component {
         this.state = {
         };
 
+        console.log("new login");
         console.log(this.props);
     }
 
@@ -25,7 +25,7 @@ export class Login extends Component {
         let typedPassword = this.refs.password.value;
         console.log(this.state);
         console.log("Login: " + typedLogin + " Senha: " + typedPassword);
-        let user = defaultUsers.filter(value => (value.email === typedLogin || value.username === typedLogin) && value.password === typedPassword);
+        let user = this.props.users.filter(value => (value.email === typedLogin || value.username === typedLogin) && value.password === typedPassword);
 
         if (user.length) {
             this.props.logUser(user[0]);

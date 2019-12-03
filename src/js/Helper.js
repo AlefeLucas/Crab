@@ -5,7 +5,7 @@ export const faction = {
 };
 
 
-export const defaultUsers =
+export let defaultUsers =
     [
         {
             "email": 'yoda@ioasys.com.br',
