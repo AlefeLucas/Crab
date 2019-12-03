@@ -62,14 +62,13 @@ export class Login extends Component {
 
                                     <img src={userIcon} className="form-icon"/>
                                     <input className="area-text-login" type="text" name="email"
-                                           placeholder="Username/Email" ref="login"/>
+                                           placeholder="Username/Email" ref="login" required/>
                                 </div>
                                 <div className="area-login">
                                     <img src={keyIcon} className="form-icon"/>
 
                                     <input id="password-text" className="area-text-login" ref="password" type="password"
-                                           name="senha"
-                                           placeholder="Senha"/>
+                                           name="senha" placeholder="Senha" required/>
                                 </div>
                                 <input id="botao-login" type="submit" value="Entrar"/>
                             </form>
