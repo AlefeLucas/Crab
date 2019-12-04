@@ -32,11 +32,10 @@ class App extends Component {
         console.log(this.state.users);
     };
 
-    logUser = (user) => {
+    setUser = (user) => {
         this.setState({
             user: user
         });
-        console.log(user);
     };
 
     render() {
@@ -44,9 +43,9 @@ class App extends Component {
 
             <Router>
                 <Route exact path="/"
-                       render={(props) => <Login {...props} users={this.state.users} logUser={this.logUser}/>}/>
+                       render={(props) => <Login {...props} users={this.state.users} setUser={this.setUser} user={this.state.user}/>}/>
                 <Route exact path="/signup"
-                       render={(props) => <SignUp {...props} users={this.state.users} addUser={this.addUser}/>}/>
+                       render={(props) => <SignUp {...props}  setUser={this.setUser} users={this.state.users} addUser={this.addUser}/>}/>
                 <Route exact path="/home" render={(props) => <Home {...props} user={this.state.user}/>}/>
                 <Route exact path="/forgot" render={(props) => <Forgot {...props} />}/>
                 <Route exact path="/reset" render={(props) => <ResetPassword {...props} />}/>

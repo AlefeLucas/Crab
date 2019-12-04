@@ -12,12 +12,17 @@ export class Login extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-        };
 
         console.log("new login");
         console.log(this.props);
+
+        this.state = {
+            login: this.props.user != null ? this.props.user.username : ""
+        };
+
     }
+
+
 
     handleSignIn(e) {
         e.preventDefault();
@@ -28,12 +33,20 @@ export class Login extends Component {
         let user = this.props.users.filter(value => (value.email === typedLogin || value.username === typedLogin) && value.password === typedPassword);
 
         if (user.length) {
-            this.props.logUser(user[0]);
+            this.props.setUser(user[0]);
             this.props.history.push('/home');
         } else {
-            alert('Login ou senha incorreto(s).');
+            alert('Login or password incorret.');
 
         }
+    }
+
+    onChangeLogin(e) {
+        let str = e.target.value;
+        this.setState({
+            login: str
+        });
+        console.log("changelogin");
     }
 
     render() {
@@ -54,32 +67,32 @@ export class Login extends Component {
                                 <div>
                                     <img className="imagens-login" src={jedi} alt="Logo sith"/>
                                     <img className="imagens-login" src={sith} alt="Logo sith"/>
-                                    <img className="imagens-login-cacadores" src={cacadores} alt="Logo sith"/>
+                                    <img className="imagens-login" src={cacadores} alt="Logo sith"/>
                                 </div>
                             </div>
                             <form className="form-login" onSubmit={this.handleSignIn.bind(this)}>
                                 <div className="area-login">
 
                                     <img src={userIcon} className="form-icon"/>
-                                    <input className="area-text-login" type="text" name="email"
+                                    <input onChange={this.onChangeLogin.bind(this)}  value={this.state.login} className="area-text-login" type="text" name="email"
                                            placeholder="Username/Email" ref="login" required/>
                                 </div>
                                 <div className="area-login">
                                     <img src={keyIcon} className="form-icon"/>
 
                                     <input id="password-text" className="area-text-login" ref="password" type="password"
-                                           name="senha" placeholder="Senha" required/>
+                                           name="senha" placeholder="Password" required/>
                                 </div>
-                                <input id="botao-login" type="submit" value="Entrar"/>
+                                <input id="botao-login" type="submit" value="Log In"/>
                             </form>
                         </div>
                         <div className="possibilidades-login">
                            <span>
-                               <Link to={"/signup"}>Cadastrar</Link>
+                               <Link to={"/signup"}>Sign Up</Link>
                           </span>
 
                             <span>
-                               <Link to={"/forgot"}>Esqueci minha senha</Link>
+                               <Link to={"/forgot"}>Forgot my password</Link>
                               </span>
                         </div>
 

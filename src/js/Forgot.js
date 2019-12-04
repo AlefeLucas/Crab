@@ -12,7 +12,7 @@ export class Forgot extends Component {
 
     handleSendLink  (e){
         e.preventDefault();
-        alert("Um link foi enviado ao seu email.");
+        alert("A link has been sent to your email.");
     };
 
     render() {
@@ -29,7 +29,7 @@ export class Forgot extends Component {
                         <div className="caixa-login">
                             <div className="cabecalho-login">
                                 <div>
-                                    <h2>Recuperar Senha</h2>
+                                    <h2>Recover Password</h2>
                                 </div>
 
                             </div>
@@ -37,18 +37,18 @@ export class Forgot extends Component {
                                 <div className="area-login">
 
                                     <img src={userIcon} className="form-icon"/>
-                                    <input className="area-text-login" type="text" name="email"
+                                    <input className="area-text-login" type="email" required name="email"
                                            placeholder="Email"/>
                                 </div>
 
 
-                                < input id="botao-login" type="submit" value="Enviar Link"/>
+                                < input id="botao-login" type="submit" value="Send Link"/>
 
                             </form>
                         </div>
                         <div className="retorno">
                            <span>
-                                 <Link to={"/"}>Voltar</Link>
+                                 <Link to={"/"}>Back</Link>
                           </span>
 
 

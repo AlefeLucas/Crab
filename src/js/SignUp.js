@@ -6,10 +6,11 @@ import keyIcon from '../images/login/iconkey.svg';
 import factionIcon from '../images/login/iconfaction.svg';
 import {Link} from 'react-router-dom'
 import faction from './Helper.js';
-
+import {Tooltip} from '@material-ui/core';
 
 export class SignUp extends Component {
     factionChange(e) {
+
         console.log(e);
         switch (e.target.value) {
             case faction.JEDI:
@@ -63,6 +64,7 @@ export class SignUp extends Component {
         };
 
         this.props.addUser(user);
+        this.props.setUser(user);
         this.props.history.push('/');
 
 
@@ -70,7 +72,7 @@ export class SignUp extends Component {
 
     validateEmail(e) {
         if (this.props.users.filter(value => value.email === this.refs.email.value).length) {
-            this.refs.username.setCustomValidity('Este email já possui uma conta.');
+            this.refs.username.setCustomValidity('This email already has an account.');
         } else {
             this.refs.username.setCustomValidity('');
         }
@@ -78,9 +80,9 @@ export class SignUp extends Component {
 
     validateUsername(e) {
         if (/\s/.test(this.refs.username.value)) {
-            this.refs.username.setCustomValidity('Nome de usuário não pode conter espaços.');
+            this.refs.username.setCustomValidity('Username cannot contain spaces.');
         } else if (this.props.users.filter(value => value.username === this.refs.username.value).length) {
-            this.refs.username.setCustomValidity('Este nome de usuário já está sendo utilizado.');
+            this.refs.username.setCustomValidity('This username was already taken.');
         } else {
             this.refs.username.setCustomValidity('');
         }
@@ -94,9 +96,9 @@ export class SignUp extends Component {
 
     checkPasswordConstraints() {
         if (!/\d/.test(this.refs.password.value) || !/[^0-9]/.test(this.refs.password.value)) {
-            this.refs.password.setCustomValidity('Senha precisa conter pelo menos um dígito e um não-dígito.');
+            this.refs.password.setCustomValidity('Password must have at least a digit and a non-digit.');
         } else if (this.refs.password.value.length < 8) {
-            this.refs.password.setCustomValidity('Senha precisa conter pelo menos 8 caracteres.');
+            this.refs.password.setCustomValidity('Password must have at least 8 characters.');
         } else {
             this.refs.password.setCustomValidity('');
         }
@@ -104,10 +106,18 @@ export class SignUp extends Component {
 
     checkPasswordMatch() {
         if (this.refs.password.value !== this.refs.confirm.value) {
-            this.refs.confirm.setCustomValidity("Senhas não coincidem.");
+            this.refs.confirm.setCustomValidity("Passwords don't match.");
         } else {
             this.refs.confirm.setCustomValidity('');
         }
+    }
+
+    showTooltip(e) {
+
+    }
+
+    hideTooltip(e) {
+
     }
 
     render() {
@@ -123,7 +133,7 @@ export class SignUp extends Component {
                         <div className="caixa-login">
                             <div className="cabecalho-login">
                                 <div>
-                                    <h2>Cadastro</h2>
+                                    <h2>Sign Up</h2>
                                 </div>
                                 <div>
                                     <svg ref="jedilogo" id="jedilogo" className="imagens-login"
@@ -181,7 +191,7 @@ export class SignUp extends Component {
                                     <img src={keyIcon} className="form-icon"/>
 
                                     <input id="password-text" className="area-text-login" type="password" name="senha"
-                                           placeholder="Senha" ref="password"
+                                           placeholder="Password" ref="password"
                                            onChange={this.validatePassword.bind(this)}/>
                                 </div>
                                 <div className="area-login">
@@ -189,28 +199,35 @@ export class SignUp extends Component {
 
                                     <input id="confirm-password-text" className="area-text-login" type="password"
                                            name="senha"
-                                           placeholder="Confirmar Senha" ref="confirm"
+                                           placeholder="Confirm Password" ref="confirm"
                                            onKeyUp={this.validatePassword.bind(this)}/>
                                 </div>
-                                <div className="area-login">
-
-                                    <img src={factionIcon} className="form-icon"/>
-                                    <select ref="select" required className="area-text-login" name="example"
-                                            onChange={this.factionChange.bind(this)}>
-                                        <option value="" disabled selected>Facção...</option>
-                                        <option value={faction.JEDI}>Jedi</option>
-                                        <option value={faction.SITH}>Sith</option>
-                                        <option value={faction.BOUNTY_HUNTER}>Caçador de Recompensa</option>
 
 
-                                    </select>
-                                </div>
-                                < input id="botao-login" type="submit" value="Cadastrar"/>
+
+                                    <div className="area-login">
+
+                                        <img src={factionIcon} className="form-icon"/>
+
+                                        <select ref="select" required className="area-text-login" name="example"
+                                                onChange={this.factionChange.bind(this)}>
+                                            <option value="" disabled selected>Faction...</option>
+                                            <option title="The Jedi Order was a noble, religious order of protectors united in their devotion to the light side of the Force. With a history dating back thousands of years before the rise of the Galactic Empire, the Jedi Knights—noted for their lightsabers and natural ability to harness the powers of the Force—stood as the guardians of peace and justice in the Galactic Republic." value={faction.JEDI}>Jedi</option>
+                                            <option title="The Sith, also referred to as the Sith Order, was an ancient order of Force-wielders devoted to the dark side of the Force. Driven by their emotions, including hate, anger, and greed, the Sith were deceptive and obsessed with gaining power no matter the cost. " value={faction.SITH}>Sith</option>
+                                            <option title="Bounty hunters were individuals who could be hired to capture or kill a designated target. The target would have a price or bounty on their heads that would be collected by the bounty hunter upon successful capture or proof of death. " value={faction.BOUNTY_HUNTER}>Caçador de
+                                                Recompensa
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                < input id="botao-login" type="submit" value="Sign Up"/>
                             </form>
                         </div>
                         <div className="retorno">
                            <span>
-                                 <Link to={"/"}>Voltar</Link>
+                                 <Link to={"/"}>Back</Link>
                           </span>
 
 
