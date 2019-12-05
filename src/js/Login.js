@@ -73,12 +73,12 @@ export class Login extends Component {
                             <form className="form-login" onSubmit={this.handleSignIn.bind(this)}>
                                 <div className="area-login">
 
-                                    <img src={userIcon} className="form-icon"/>
+                                    <img src={userIcon} className="form-icon" alt="user icon"/>
                                     <input onChange={this.onChangeLogin.bind(this)}  value={this.state.login} className="area-text-login" type="text" name="email"
                                            placeholder="Username/Email" ref="login" required/>
                                 </div>
                                 <div className="area-login">
-                                    <img src={keyIcon} className="form-icon"/>
+                                    <img src={keyIcon} className="form-icon" alt="key icon"/>
 
                                     <input id="password-text" className="area-text-login" ref="password" type="password"
                                            name="senha" placeholder="Password" required/>

@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import './ListItem.css'
 
 export class ListItem extends Component {
+    constructor(props) {
+        super(props);
+
+        console.log('ListItem constructor')
+    }
+
   render() {
     return (
       <li>

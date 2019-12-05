@@ -1,13 +1,5 @@
 import React, {Component} from 'react'
-import sith from '../images/login/sith.svg';
-import cacadores from '../images/login/bountyhunter.svg';
-import jedi from '../images/login/jedi.svg';
-import emailIcon from '../images/login/iconemail.svg';
-import userIcon from '../images/login/iconuser.svg';
-
 import keyIcon from '../images/login/iconkey.svg';
-import factionIcon from '../images/login/iconfaction.svg';
-
 import {Link} from 'react-router-dom'
 
 export class ResetPassoword extends Component {
@@ -63,14 +55,14 @@ export class ResetPassoword extends Component {
                             <form className="form-login" onSubmit={this.handleReset.bind(this)}>
 
                                 <div className="area-login">
-                                    <img src={keyIcon} className="form-icon"/>
+                                    <img src={keyIcon} className="form-icon" alt="key icon"/>
 
                                     <input id="password-text" className="area-text-login" type="password" name="senha"
                                            placeholder="New Password" ref="password"
                                            onKeyUp={this.validatePassword.bind(this)} required/>
                                 </div>
                                 <div className="area-login">
-                                    <img src={keyIcon} className="form-icon"/>
+                                    <img src={keyIcon} className="form-icon" alt="key icon"/>
 
                                     <input id="password-text" className="area-text-login" type="password" name="senha"
                                            placeholder="Confirm Password" ref="confirm"

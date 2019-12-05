@@ -1,11 +1,5 @@
 import React, {Component} from 'react'
-import sith from '../images/login/sith.svg';
-import cacadores from '../images/login/bountyhunter.svg';
-import jedi from '../images/login/jedi.svg';
 import userIcon from '../images/login/iconuser.svg';
-import keyIcon from '../images/login/iconkey.svg';
-import factionIcon from '../images/login/iconfaction.svg';
-
 import {Link} from 'react-router-dom'
 
 export class Forgot extends Component {
@@ -36,7 +30,7 @@ export class Forgot extends Component {
                             <form className="form-login"  onSubmit={this.handleSendLink.bind(this)}>
                                 <div className="area-login">
 
-                                    <img src={userIcon} className="form-icon"/>
+                                    <img src={userIcon} className="form-icon" alt="user icon"/>
                                     <input className="area-text-login" type="email" required name="email"
                                            placeholder="Email"/>
                                 </div>

@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import Sidebar from '../principal/components/Sidebar/Sidebar.js';
 import Header from '../principal/components/Header/Header.js';
 import Content from '../principal/components/Content/Content.js';
-import Modal from '../principal/components/Sidebar/Modal/Modal.js';
 import '../principal/App.css';
 
 export class Home extends Component {
@@ -13,8 +12,10 @@ export class Home extends Component {
         this.state = {
             user: this.props.user
         };
-        console.log("home");
-        console.log(this.props);
+        console.log("Home constructor");
+    }
+
+    collapse(collapsed) {
 
     }
 
@@ -23,10 +24,9 @@ export class Home extends Component {
 
         return (
             <div className="home">
-                <Sidebar user={this.state.user}/>
+                <Sidebar user={this.state.user} collapse={this.collapse}/>
                 <Header/>
                 <Content/>
-                <Modal/>
             </div>
         );
     }

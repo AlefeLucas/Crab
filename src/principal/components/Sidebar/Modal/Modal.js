@@ -11,6 +11,8 @@ export class Modal extends Component {
       user: this.props.user,
       show: "hide"
     };
+
+    console.log("Modal constructor");
   }
 
   componentDidMount() {

@@ -6,7 +6,6 @@ import keyIcon from '../images/login/iconkey.svg';
 import factionIcon from '../images/login/iconfaction.svg';
 import {Link} from 'react-router-dom'
 import faction from './Helper.js';
-import {Tooltip} from '@material-ui/core';
 
 export class SignUp extends Component {
     factionChange(e) {
@@ -176,26 +175,26 @@ export class SignUp extends Component {
                             <form className="form-login" onSubmit={this.handleSignUp.bind(this)}>
                                 <div className="area-login">
 
-                                    <img src={userIcon} className="form-icon"/>
+                                    <img src={userIcon} className="form-icon" alt="user icon"/>
                                     <input className="area-text-login" type="text" name="username"
                                            placeholder="Username" ref="username"
                                            onChange={this.validateUsername.bind(this)}/>
                                 </div>
                                 <div className="area-login">
 
-                                    <img src={emailIcon} className="form-icon"/>
+                                    <img src={emailIcon} className="form-icon" alt="email icon"/>
                                     <input className="area-text-login" type="email" name="email"
                                            placeholder="Email" ref="email" onChange={this.validateEmail.bind(this)}/>
                                 </div>
                                 <div className="area-login">
-                                    <img src={keyIcon} className="form-icon"/>
+                                    <img src={keyIcon} className="form-icon" alt="key icon"/>
 
                                     <input id="password-text" className="area-text-login" type="password" name="senha"
                                            placeholder="Password" ref="password"
                                            onChange={this.validatePassword.bind(this)}/>
                                 </div>
                                 <div className="area-login">
-                                    <img src={keyIcon} className="form-icon"/>
+                                    <img src={keyIcon} className="form-icon" alt="key icon"/>
 
                                     <input id="confirm-password-text" className="area-text-login" type="password"
                                            name="senha"
@@ -207,7 +206,7 @@ export class SignUp extends Component {
 
                                     <div className="area-login">
 
-                                        <img src={factionIcon} className="form-icon"/>
+                                        <img src={factionIcon} className="form-icon" alt="faction choose icon"/>
 
                                         <select ref="select" required className="area-text-login" name="example"
                                                 onChange={this.factionChange.bind(this)}>

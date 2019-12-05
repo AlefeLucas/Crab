@@ -9,12 +9,18 @@ export class Header extends Component {
     } else {
       this.header.style.marginLeft = "0px";
     }
+  };
+
+  constructor(props) {
+    super(props);
+
+    console.log('Header constructor');
   }
 
   render() {
     return (
       <header className="header" ref={header => {this.header = header;}}>
-        <img src={require('./../../images/planeta.png')} alt="Header image" />
+        <img src={require('./../../images/planeta.png')} alt="Header according to category." />
         <p>Planets</p>
       </header>
     )

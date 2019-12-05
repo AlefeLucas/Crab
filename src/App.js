@@ -5,7 +5,7 @@ import SignUp from "./js/SignUp.js";
 import Forgot from "./js/Forgot.js";
 import ResetPassword from "./js/ResetPassoword.js";
 import {defaultUsers} from './js/Helper.js';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
     //props is short of properties

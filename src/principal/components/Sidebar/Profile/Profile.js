@@ -9,11 +9,13 @@ export class Profile extends Component {
         this.state = {
             user: this.props.user
         };
+
+        console.log('Profile constructor');
     }
   
     handleClick = (e) => {
         return this.profile.contains(e.target);
-    }
+    };
 
     collapse(isInDesktop) {
         this.props.collapse(isInDesktop);

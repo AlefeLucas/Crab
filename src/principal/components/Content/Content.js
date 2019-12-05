@@ -10,6 +10,8 @@ export class Content extends Component {
     this.state = {
       boxShadow: ""
     };
+
+    console.log('Content constructor');
   }
 
   componentDidMount() {
