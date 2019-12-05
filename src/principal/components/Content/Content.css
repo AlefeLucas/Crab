@@ -34,7 +34,23 @@
   vertical-align: middle;
 }
 
-/* cards section */
-.all-cards {
-  padding: 5px 25px;
+.box-shadow {
+  box-shadow: 1px 1px 25px rgb(121, 121, 121);
+}
+
+/** mobile */
+@media screen and (max-width: 850px) {
+  
+  .content {
+    margin-left: 0px;
+  }
+
+  /* search section */
+  .search {
+    text-align: center;
+  }
+
+  .search > input {
+    width: 75%;
+  }
 }

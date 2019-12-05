@@ -61,3 +61,20 @@
   border: 2px solid transparent;
   color: white;
 }
+
+.modal.show {
+  margin-top: 0px;
+}
+
+.modal.hide {
+  margin-top: -400px;
+}
+
+/** mobile */
+@media screen and (max-width: 850px) {
+  
+  .modal-float {
+    top: 15%;
+    right: 30%;
+  }
+}

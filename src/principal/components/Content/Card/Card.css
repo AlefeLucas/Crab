@@ -1,3 +1,8 @@
+/* cards section */
+.all-cards {
+  padding: 5px 25px;
+}
+
 .card {
   background: #FFFFFF;
   box-shadow: 3px 6px 15px rgb(121, 121, 121);
@@ -14,4 +19,12 @@
 .card-text {
   color: #323153;
   font-size: 24px;
+}
+
+.selected-card {
+  padding: 5px 25px;
+}
+
+.hide {
+  display: none;
 }

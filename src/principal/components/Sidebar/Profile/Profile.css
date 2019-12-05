@@ -11,8 +11,39 @@
   border-radius: 50%;
   height: 100px;
   width: 100px;
+
+  display: inline-block;
 }
 
 .profile-mobile {
   display: none;
+}
+
+/** mobile */
+@media screen and (max-width: 850px) {
+  
+  .profile-section {
+    padding: 10px 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .profile-section p {
+    display: none;
+  }
+
+  .profile-mobile {
+    display: inline-block;
+    padding: 10px 0px;
+    text-align: center;
+    vertical-align: middle;
+    width: 70%;
+  }
+  
+  .img-profile {
+    display: inline-block;
+    height: 50px;
+    vertical-align: middle;
+    width: 50px;
+  }
 }

@@ -1,13 +1,16 @@
 .sidebar {
   background-color: #21203F;
   font-size: 21px;
-  /* grid-area: sidebar; */
   height: 100%;
   position: fixed;
   text-align: center;
   transition: 0.5s;
   width: 325px;
   z-index: 1;
+}
+
+.sidebar-content {
+  overflow: hidden;
 }
 
 /* float collapse button section */
@@ -48,5 +51,21 @@
 
 /* faction section */
 .faction-section {
-  font-size: 100px;
+  padding-top: 2%;
+}
+
+/** mobile */
+@media screen and (max-width: 850px) {
+
+  .sidebar {
+    height: 79px;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* float collapse button section */
+  .float-collapse {
+    display: none;
+  }
 }
