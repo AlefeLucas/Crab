@@ -1,5 +1,7 @@
+@import "./../../Variables.css";
+
 .sidebar {
-  background-color: #21203F;
+  background-color: var(--jediSidebarBackground);
   font-size: 21px;
   height: 100%;
   position: fixed;
@@ -15,7 +17,7 @@
 
 /* float collapse button section */
 .float-collapse {
-  background: #14ABFD;
+  background: var(--jediFloatBackground);
   border: 1px solid transparent;
   border-radius: 50%;
   color: white;

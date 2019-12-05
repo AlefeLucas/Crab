@@ -3,6 +3,12 @@ import './Header.css';
 
 export class Header extends Component {
 
+  constructor(props) {
+    super(props);
+
+    console.log('Header constructor');
+  }
+
   collapse = (e) => {
     if (e) {
       this.header.style.marginLeft = "325px";
@@ -11,10 +17,14 @@ export class Header extends Component {
     }
   };
 
-  constructor(props) {
-    super(props);
-
-    console.log('Header constructor');
+  changeStyle = (e) => {
+    if (e === "Jedi") {
+      console.log("header 0");
+    } else if (e === "Sith") {
+      console.log("header 1");
+    } else {
+      console.log("header 2");
+    }
   }
 
   render() {

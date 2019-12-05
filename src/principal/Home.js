@@ -19,12 +19,25 @@ export class Home extends Component {
         this.content.collapse(e);
     };
 
+    changeStyle = (e) => {
+        if (e === "Jedi") {
+            console.log("home 0");
+        } else if (e === "Sith") {
+            console.log("home 1");
+        } else {
+            console.log("home 2");
+        }
+        this.header.changeStyle(e);
+        this.content.changeStyle(e);
+    }
+
     render() {
         return (
             <div className="home">
                 <Sidebar user={this.state.user}
                         ref={sidebar => {this.sidebar = sidebar;}}
-                        collapse={this.collapse.bind()}/>
+                        collapse={this.collapse.bind()}
+                        changeStyle={this.changeStyle.bind()}/>
                 <Header ref={header => {this.header = header;}}/>
                 <Content ref={content => {this.content = content;}}/>
             </div>

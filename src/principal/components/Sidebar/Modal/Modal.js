@@ -24,7 +24,6 @@ export class Modal extends Component {
   }
 
   handleClick = (e) => {
-    // console.log(this.props.sidebar.profile.handleClick(e));
     if (!this.modal.contains(e.target)) {
       if (this.props.sidebar.profile.handleClick(e)) {
         this.setState({
@@ -38,6 +37,18 @@ export class Modal extends Component {
     }
   };
 
+  changeStyle = (e) => {
+    let target = e.target.value;
+    if (target === "Jedi") {
+      console.log("modal 0");
+    } else if (target === "Sith") {
+      console.log("modal 1");
+    } else {
+      console.log("modal 2");
+    }
+    this.props.sidebar.changeStyle(target);
+  }
+
   render() {
     return (
       <div className={"modal "+this.state.show}
@@ -48,11 +59,15 @@ export class Modal extends Component {
         </span>
         <p>{this.state.user ? this.state.user.username : "Julius Caesar"}</p>
         <button className="modal-button">Change Password</button>
-        <select className="modal-button">
+        <select className="modal-button"
+                onChange={this.changeStyle.bind(this)}>
           <option defaultValue className="modal-button">Change Faction</option>
-          <option name="faccao-jedi" className="modal-button">Jedi</option>
-          <option name="faccao-sith" className="modal-button">Sith</option>
-          <option name="faccao-cacadores" className="modal-button">Bounty Hunter</option>
+          <option name="faccao-jedi"
+                className="modal-button">Jedi</option>
+          <option name="faccao-sith"
+                className="modal-button">Sith</option>
+          <option name="faccao-cacadores"
+                className="modal-button">Bounty Hunter</option>
         </select>
         <button className="modal-button blue">Logout</button>
       </div>

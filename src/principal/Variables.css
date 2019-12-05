@@ -1,0 +1,34 @@
+:root {
+  /** Jedi Variables */
+  --jediSidebarBackground: #21203F;
+  --jediSidebarItem: #323153;
+  --jediSidebarTextColor: #FFFFFF;
+  --jediFloatBackground: #14ABFD;
+  --jediSearchBackground: #CECECE;
+  --jediContentBackground: #E4E4E4;
+  --jediCardBackground: #FFFFFF;
+  --jediCardTitle: #14ABFD;
+  --jediCardTextColor: #323153;
+  
+  /** Jedi Variables */
+  /* --jediSidebarBackground: #21203F;
+  --jediSidebarItem: #323153;
+  --jediSidebarTextColor: #FFFFFF;
+  --jediFloatBackground: #14ABFD;
+  --jediSearchBackground: #CECECE;
+  --jediContentBackground: #E4E4E4;
+  --jediCardBackground: #FFFFFF;
+  --jediCardTitle: #14ABFD;
+  --jediCardTextColor: #323153; */
+  
+  /** Bounty Hunters Variables */
+  --bhSidebarBackground: #064F34;
+  --bhSidebarItem: #1A6348;
+  --bhSidebarTextColor: #EFA208;
+  --bhFloatBackground: #EFA208;
+  --bhSearchBackground: #60DCA2;
+  --bhContentBackground: #D4FFE5;
+  --bhCardBackground: #FFFFFF;
+  --bhCardTitle: #EFA208;
+  --bhCardTextColor: #323153;
+}

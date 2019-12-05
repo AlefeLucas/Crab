@@ -42,9 +42,15 @@ export class Content extends Component {
     }
   };
 
-  selectCard = (e) => {
-
-  };
+  changeStyle = (e) => {
+    if (e === "Jedi") {
+      console.log("content 0");
+    } else if (e === "Sith") {
+      console.log("content 1");
+    } else {
+      console.log("content 2");
+    }
+  }
   
   render() {
     return (
@@ -55,8 +61,7 @@ export class Content extends Component {
         </div>
         <div className="all-cards">
           <Card title="ALDERAAN"
-              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim suscipit impedit expedita beatae velit asperiores sint quo fugit unde nesciunt ex sunt nisi vel, consequuntur porro quisquam deleniti molestiae magnam. Voluptates, perferendis nesciunt officiis animi repudiandae et! Illum quos a distinctio exercitationem voluptatibus dicta consectetur? Unde, fugit dignissimos quis animi eveniet sed harum quasi libero, possimus modi perferendis. Animi, illum."
-              onClick={this.selectCard(this)}/>
+              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim suscipit impedit expedita beatae velit asperiores sint quo fugit unde nesciunt ex sunt nisi vel, consequuntur porro quisquam deleniti molestiae magnam. Voluptates, perferendis nesciunt officiis animi repudiandae et! Illum quos a distinctio exercitationem voluptatibus dicta consectetur? Unde, fugit dignissimos quis animi eveniet sed harum quasi libero, possimus modi perferendis. Animi, illum."/>
           <Card title="ALDERAAN" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim suscipit impedit expedita beatae velit asperiores sint quo fugit unde nesciunt ex sunt nisi vel, consequuntur porro quisquam deleniti molestiae magnam. Voluptates, perferendis nesciunt officiis animi repudiandae et! Illum quos a distinctio exercitationem voluptatibus dicta consectetur? Unde, fugit dignissimos quis animi eveniet sed harum quasi libero, possimus modi perferendis. Animi, illum." />
           <Card title="ALDERAAN" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim suscipit impedit expedita beatae velit asperiores sint quo fugit unde nesciunt ex sunt nisi vel, consequuntur porro quisquam deleniti molestiae magnam. Voluptates, perferendis nesciunt officiis animi repudiandae et! Illum quos a distinctio exercitationem voluptatibus dicta consectetur? Unde, fugit dignissimos quis animi eveniet sed harum quasi libero, possimus modi perferendis. Animi, illum." />
         </div>

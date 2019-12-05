@@ -44,6 +44,17 @@ export class Sidebar extends Component {
         });
     };
 
+    changeStyle = (e) => {
+        if (e === "Jedi") {
+            console.log("sidebar 0");
+        } else if (e === "Sith") {
+            console.log("sidebar 1");
+        } else {
+            console.log("sidebar 2");
+        }
+        this.props.changeStyle(e);
+    }
+
     render() {
         return (
             <aside className="sidebar" ref={aside => {
