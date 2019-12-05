@@ -34,7 +34,7 @@ export class Modal extends Component {
         });
       }
     }
-  }
+  };
 
   render() {
     return (

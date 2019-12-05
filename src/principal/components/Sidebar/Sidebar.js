@@ -14,6 +14,9 @@ export class Sidebar extends Component {
         collapsed: false,
         profile: this.profile
     };
+
+    console.log("Profile");
+    console.log(this.state);
   }
 
   collapse = (isInDesktop) => {
@@ -23,12 +26,12 @@ export class Sidebar extends Component {
         this.sidebar.style.width = "325px";
         this.floatCollapseDiv.style.marginLeft = "305px";
         this.floatCollapseDiv.children[0].src = require("./../../images/icon-material-keyboard-arrow-left.png");
-        this.floatCollapseDiv.children[0].alt = "Imagem de seta para a esquerda"
+        this.floatCollapseDiv.children[0].alt = "Left arrow"
       } else {
         this.sidebar.style.width = "0px";
         this.floatCollapseDiv.style.marginLeft = "0px";
         this.floatCollapseDiv.children[0].src = require("./../../images/icon-material-keyboard-arrow-right.png");
-        this.floatCollapseDiv.children[0].alt = "Imagem de seta para a direita"
+        this.floatCollapseDiv.children[0].alt = "Right arrow"
       }
     } else {
       if (this.state.collapsed) {
@@ -40,7 +43,7 @@ export class Sidebar extends Component {
     this.setState({
       collapsed: !this.state.collapsed
     });
-  }
+  };
 
   render() {
     return (
@@ -49,7 +52,7 @@ export class Sidebar extends Component {
             ref={div => {this.floatCollapseDiv = div;}}
             onClick={this.collapse.bind(true)}>
           <img src={require("./../../images/icon-material-keyboard-arrow-left.png")}
-              alt="Imagem de seta para a esquerda"
+              alt="Left arrow"
               className="float-collapse-image"/>
         </div>
         <div className="sidebar-content">
@@ -60,30 +63,30 @@ export class Sidebar extends Component {
             <ul className="links-list">
               <ListItem title="Home" link="#"
                       imageSrc={require("./../../images/icon-awesome-home.png")}
-                      imageAlt="Imagem do ícone da home"/>
-              <ListItem title="Filmes" link="#"
+                      imageAlt="Home icon"/>
+              <ListItem title="Films" link="#"
                       imageSrc={require("./../../images/icon-awesome-film.png")}
-                      imageAlt="Imagem do ícone dos filmes"/>
-              <ListItem title="Personagens" link="#"
+                      imageAlt="Films icon"/>
+              <ListItem title="People" link="#"
                       imageSrc={require("./../../images/iconfinder_darth_vader_216968.png")}
-                      imageAlt="Imagem do ícone dos personagens"/>
-              <ListItem title="Planetas" link="#"
+                      imageAlt="People icon"/>
+              <ListItem title="Planets" link="#"
                       imageSrc={require("./../../images/caminho-34.png")}
-                      imageAlt="Imagem do ícone dos planetas"/>
-              <ListItem title="Raças" link="#"
+                      imageAlt="Planets icon"/>
+              <ListItem title="Species" link="#"
                       imageSrc={require("./../../images/uniao-1.png")}
-                      imageAlt="Imagem do ícone das raças"/>
-              <ListItem title="Naves" link="#"
+                      imageAlt="Species icon"/>
+              <ListItem title="Starships" link="#"
                       imageSrc={require("./../../images/uniao-2.png")}
-                      imageAlt="Imagem do ícone das naves"/>
-              <ListItem title="Veículos" link="#"
+                      imageAlt="Starships icon"/>
+              <ListItem title="Vehicles" link="#"
                       imageSrc={require("./../../images/icon-awesome-space-shuttle.png")}
-                      imageAlt="Imagem do ícone dos veículos"/>
+                      imageAlt="Vehicles icon"/>
             </ul>
           </div>
           <div className="faction-section">
             <img src={require("./../../images/icon-awesome-jedi-order.png")}
-                alt="Imagem da facção do usuário"/>
+                alt="User's faction icon"/>
           </div>
         </div>        
         <Modal user={this.props.user} sidebar={this} />

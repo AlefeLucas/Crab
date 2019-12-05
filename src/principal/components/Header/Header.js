@@ -14,8 +14,8 @@ export class Header extends Component {
   render() {
     return (
       <header className="header" ref={header => {this.header = header;}}>
-        <img src={require('./../../images/planeta.png')} alt="Imagem de cabecalho do tema" />
-        <p>Planetas</p>
+        <img src={require('./../../images/planeta.png')} alt="Header image" />
+        <p>Planets</p>
       </header>
     )
   }

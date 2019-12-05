@@ -21,7 +21,7 @@ export class Content extends Component {
   }
 
   handleScroll = () => {
-    if ((this.search.getBoundingClientRect().top) == 0) {
+    if ((this.search.getBoundingClientRect().top) === 0) {
       this.setState({
         boxShadow: "box-shadow"
       });
@@ -30,7 +30,7 @@ export class Content extends Component {
         boxShadow: ""
       });
     }
-  }
+  };
   
   collapse = (e) => {
     if (e) {
@@ -38,18 +38,18 @@ export class Content extends Component {
     } else {
       this.content.style.marginLeft = "0px";
     }
-  }
+  };
 
   selectCard = (e) => {
 
-  }
+  };
   
   render() {
     return (
       <div className="content" ref={content => {this.content = content;}}>
         <div className={"search "+this.state.boxShadow} ref={search => {this.search = search;}}>
-          <input type="text" placeholder="Pesquisar" />
-          <img src={require("./../../images/icon-map-search.png")} alt="Lupa" />
+          <input type="text" placeholder="Search" />
+          <img src={require("./../../images/icon-map-search.png")} alt="Search icon" />
         </div>
         <div className="all-cards">
           <Card title="ALDERAAN"
