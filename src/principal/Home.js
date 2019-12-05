@@ -17,7 +17,7 @@ export class Home extends Component {
     collapse = (e) => {
         this.header.collapse(e);
         this.content.collapse(e);
-    }
+    };
 
     render() {
         return (

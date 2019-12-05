@@ -209,8 +209,8 @@ export class SignUp extends Component {
                                         <img src={factionIcon} className="form-icon" alt="faction choose icon"/>
 
                                         <select ref="select" required className="area-text-login" name="example"
-                                                onChange={this.factionChange.bind(this)}>
-                                            <option value="" disabled selected>Faction...</option>
+                                                onChange={this.factionChange.bind(this)} defaultValue="0">
+                                            <option value="0" disabled>Faction...</option>
                                             <option title="The Jedi Order was a noble, religious order of protectors united in their devotion to the light side of the Force. With a history dating back thousands of years before the rise of the Galactic Empire, the Jedi Knights—noted for their lightsabers and natural ability to harness the powers of the Force—stood as the guardians of peace and justice in the Galactic Republic." value={faction.JEDI}>Jedi</option>
                                             <option title="The Sith, also referred to as the Sith Order, was an ancient order of Force-wielders devoted to the dark side of the Force. Driven by their emotions, including hate, anger, and greed, the Sith were deceptive and obsessed with gaining power no matter the cost. " value={faction.SITH}>Sith</option>
                                             <option title="Bounty hunters were individuals who could be hired to capture or kill a designated target. The target would have a price or bounty on their heads that would be collected by the bounty hunter upon successful capture or proof of death. " value={faction.BOUNTY_HUNTER}>Caçador de
