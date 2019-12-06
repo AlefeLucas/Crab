@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './Header.css';
+import {paths} from "../../../js/Helper";
 
 export class Header extends Component {
 
@@ -28,13 +29,37 @@ export class Header extends Component {
     };
 
     render() {
+        let file = "planeta.png";
+        switch (this.props.path) {
+            case paths.SPECIES:
+                file = "species.jpeg";
+                break;
+            case paths.STARSHIPS:
+                file = "starships.jpeg";
+                break;
+            case paths.PEOPLE:
+                file = "people.jpeg";
+                break;
+            case paths.PLANETS:
+                file = "planeta.png";
+                break;
+            case paths.VEHICLES:
+                file = "vehicles.jpeg";
+                break;
+            case paths.FILMS:
+                file = "films.jpeg";
+                break;
+            case paths.HOME:
+                file = "planeta.png";
+
+        }
 
 
         return (
             <header className="header" ref={header => {
                 this.header = header;
             }}>
-                <img src={require('./../../images/planeta.png')} alt="Header according to category."/>
+                <img src={require('./../../images/' + file)} alt="Header according to category."/>
                 <p>{this.props.path}</p>
             </header>
         )
