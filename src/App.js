@@ -7,6 +7,7 @@ import ResetPassword from "./js/ResetPassoword.js";
 import {defaultUsers, paths} from './js/Helper.js';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
+
 class App extends Component {
     //props is short of properties
     constructor(props) {

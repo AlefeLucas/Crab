@@ -3,7 +3,8 @@ import Sidebar from './components/Sidebar/Sidebar.js';
 import Header from './components/Header/Header.js';
 import Content from './components/Content/Content.js';
 import './App.css';
-import ListItem from "./components/Sidebar/ListItem/ListItem";
+
+
 
 export class Home extends Component {
 

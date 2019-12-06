@@ -1,9 +1,27 @@
 import React, {Component} from 'react'
-import Card from './Card/Card.js'
+
+import './Card/Card.css'
 import './Content.css'
 import axios from 'axios'
 import {Link} from "react-router-dom";
 import {paths} from "../../../js/Helper";
+import Carousel from 'react-bootstrap/Carousel'
+import Card from 'react-bootstrap/Card'
+
+import jediOrSith from '../../images/jediorSith.jpg';
+import vocemanja from '../../images/vocemanja_Quiz.jpg';
+
+import quepersonagem from '../../images/Quepersonagem_Quiz.jpg';
+
+
+
+
+
+
+
+//import YouTube from 'react-native-youtube';
+
+
 export class Content extends Component {
 
     constructor(props) {
@@ -170,7 +188,7 @@ export class Content extends Component {
                 return (
                     <div className="planets card" key={planets.url}>
                         <div className="card-content">
-                            <Link to={'/' + planets.url}>
+                            <Link>
                                 <span className="card-title"> {planets.name}</span>
                             </Link>
                             <p><b>Population: </b>{planets.population}</p>
@@ -195,7 +213,7 @@ export class Content extends Component {
                 return (
                     <div className="species card" key={species.url}>
                         <div className="card-content">
-                            <Link to={'/' + species.url}>
+                            <Link>
                                 <span className="card-title"> {species.name}</span>
                             </Link>
                             <p><b>Classification: </b>{species.classification}</p>
@@ -219,7 +237,7 @@ export class Content extends Component {
 
                             <span className="card-title"> {vehicles.name}</span>
 
-                            <p><b>Model:</b>{vehicles.model}</p>
+                            <p><b>Model: </b>{vehicles.model}</p>
                             <p><b>Manufacturer:</b> {vehicles.manufacturer}</p>
                             <p><b>Cargo capacity: </b> {vehicles.cargo_capacity}</p>
                         </div>
@@ -237,8 +255,8 @@ export class Content extends Component {
                     <div className="films card" key={films.episode_id}>
                         <div className="card-content">
                             <span className="card-title"> {films.title}</span>
-                            <p><b>Episode:</b>{films.episode_id}</p>
-                            <p><b>Director:</b> {films.director}</p>
+                            <p><b>Episode: </b>{films.episode_id}</p>
+                            <p><b>Director: </b> {films.director}</p>
                             <p><b>Release date: </b> {films.release_date}</p>
                             <p><b>"</b>{films.opening_crawl}<b>"</b></p>
                         </div>
@@ -257,7 +275,8 @@ export class Content extends Component {
                 let homelink = (homeworld.length > 0 ?
                     <Link onClick={e => this.goto(homeworld)}>{homeworld}</Link> : "No info.");
                 let species = people.species.length > 0 ? people.species.map(value => value.replace('https://swapi.co/api/', '').slice(0, -1)) : "";
-                let specieslink = (species.length > 0 ? species.map(value =>  <Link onClick={e => this.goto(value)}>{value}</Link>) : "No info.");
+                let specieslink = (species.length > 0 ? species.map(value => <Link
+                    onClick={e => this.goto(value)}>{value}</Link>) : "No info.");
                 return (
                     <div className="people card" key={people.url}>
                         <div className="card-content">
@@ -333,7 +352,47 @@ export class Content extends Component {
                                placeholder="Search"/>
                         <img src={require("./../../images/icon-map-search.png")} alt="Search icon"/>
                     </div>
-                    : <span/>}
+                    :
+                    <div style={{display: "inline-flex", flexWrap: "wrap"}}>
+
+
+                        <Card style={{margin: 20, width: 300}}>
+                            <Card.Img variant="top" src={jediOrSith} style={{width: "100%", height: "auto"}}/>
+                            <Card.Body style={{ background: jediOrSith}}>
+                                <Card.Title>Quiz</Card.Title>
+                                <Card.Text>
+                                    Are you a Sith or a Jedi?
+                                </Card.Text>
+                                <a href="https://pt.quizur.com/quiz/voce-e-mais-sith-ou-jedi-ba" class="btn btn-info"
+                                   role="button">See More!</a>
+
+                            </Card.Body>
+                        </Card>
+                        <Card  style={{margin: 20, width: 300}}>
+                            <Card.Img variant="top" src={vocemanja} style={{width: "100%", height: "auto"}}/>
+                            <Card.Body  >
+                                <Card.Title>Quiz</Card.Title>
+                                <Card.Text>
+                                    How much do you know about Star Wars?
+                                </Card.Text>
+                                <a href="https://www.buzzfeed.com/br/raphaelevangelista/quanto-voce-manja-de-star-war"
+                                   class="btn btn-info" role="button">See More!</a>
+                            </Card.Body>
+                        </Card>
+
+                        <Card style={{margin: 20, width: 300}}>
+                            <Card.Img variant="top" src={quepersonagem} style={{width: "100%", height: "auto"}}/>
+                            <Card.Body>
+                                <Card.Title>Quiz </Card.Title>
+                                <Card.Text>
+                                    Which Star Wars Character Are You?
+                                </Card.Text>
+                                <a href="https://pt.quizur.com/quiz/quem-voce-seria-em-star-wars-aT"
+                                   class="btn btn-info" role="button">See More!</a>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                }
                 <div className="all-cards">
                     {shownList}
                 </div>
