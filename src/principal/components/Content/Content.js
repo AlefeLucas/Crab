@@ -118,14 +118,16 @@ export class Content extends Component {
     }
 
     handleScroll = () => {
-        if ((this.search.getBoundingClientRect().top) === 0) {
-            this.setState({
-                boxShadow: "box-shadow"
-            });
-        } else {
-            this.setState({
-                boxShadow: ""
-            });
+        if (this.search != null) {
+            if ((this.search.getBoundingClientRect().top) === 0) {
+                this.setState({
+                    boxShadow: "box-shadow"
+                });
+            } else {
+                this.setState({
+                    boxShadow: ""
+                });
+            }
         }
     };
 
@@ -272,7 +274,7 @@ export class Content extends Component {
         let shownList = null;
         switch (this.props.path) {
             case paths.HOME:
-                shownList =  <div className="center"/>;
+                shownList = <div className="center"/>;
                 break;
             case paths.FILMS:
                 shownList = filmsList;
@@ -298,12 +300,14 @@ export class Content extends Component {
             <div className="content" ref={content => {
                 this.content = content;
             }}>
-                <div className={"search " + this.state.boxShadow} ref={search => {
-                    this.search = search;
-                }}>
-                    <input type="text" placeholder="Search"/>
-                    <img src={require("./../../images/icon-map-search.png")} alt="Search icon"/>
-                </div>
+                {this.props.path !== paths.HOME ?
+                    <div className={"search " + this.state.boxShadow} ref={search => {
+                        this.search = search;
+                    }}>
+                        <input type="text" placeholder="Search"/>
+                        <img src={require("./../../images/icon-map-search.png")} alt="Search icon"/>
+                    </div>
+                    : <span/>}
                 <div className="all-cards">
                     {shownList}
                 </div>

@@ -77,25 +77,25 @@ export class Sidebar extends Component {
                              collapse={this.collapse.bind()}/>
                     <div className="links-section">
                         <ul className="links-list">
-                            <ListItem title="Home" link="/Home"
+                            <ListItem history={this.props.history} title="Home" link="/Home"
                                       imageSrc={require("./../../images/icon-awesome-home.png")}
                                       imageAlt="Home icon"/>
-                            <ListItem title="Films" link="/Films"
+                            <ListItem history={this.props.history}  title="Films" link="/Films"
                                       imageSrc={require("./../../images/icon-awesome-film.png")}
                                       imageAlt="Films icon"/>
-                            <ListItem title="People" link="/people"
+                            <ListItem history={this.props.history}  title="People" link="/people"
                                       imageSrc={require("./../../images/iconfinder_darth_vader_216968.png")}
                                       imageAlt="People icon"/>
-                            <ListItem title="Planets" link="/planets"
+                            <ListItem history={this.props.history}  title="Planets" link="/planets"
                                       imageSrc={require("./../../images/caminho-34.png")}
                                       imageAlt="Planets icon"/>
-                            <ListItem title="Species" link="/species"
+                            <ListItem history={this.props.history}  title="Species" link="/species"
                                       imageSrc={require("./../../images/uniao-1.png")}
                                       imageAlt="Species icon"/>
-                            <ListItem title="Starships" link="/starships"
+                            <ListItem history={this.props.history} title="Starships" link="/starships"
                                       imageSrc={require("./../../images/uniao-2.png")}
                                       imageAlt="Starships icon"/>
-                            <ListItem title="Vehicles" link="/vehicles"
+                            <ListItem history={this.props.history}  title="Vehicles" link="/vehicles"
                                       imageSrc={require("./../../images/icon-awesome-space-shuttle.png")}
                                       imageAlt="Vehicles icon"/>
                         </ul>

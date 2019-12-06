@@ -5,13 +5,13 @@ export const faction = {
 };
 
 export const paths = {
-    HOME: "home",
-    FILMS: "film",
-    PEOPLE: "people",
-    PLANETS: "planets",
-    SPECIES: "species",
-    STARSHIPS: "starships",
-    VEHICLES: "vehicles"
+    HOME: "Home",
+    FILMS: "Films",
+    PEOPLE: "People",
+    PLANETS: "Planets",
+    SPECIES: "Species",
+    STARSHIPS: "Starships",
+    VEHICLES: "Vehicles"
 };
 
 

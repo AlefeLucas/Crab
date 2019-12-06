@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar/Sidebar.js';
 import Header from './components/Header/Header.js';
 import Content from './components/Content/Content.js';
 import './App.css';
+import ListItem from "./components/Sidebar/ListItem/ListItem";
 
 export class Home extends Component {
 
@@ -35,11 +36,11 @@ export class Home extends Component {
     render() {
         return (
             <div className="home">
-                <Sidebar user={this.state.user}
+                <Sidebar history={this.props.history} user={this.state.user}
                         ref={sidebar => {this.sidebar = sidebar;}}
                         collapse={this.collapse.bind()}
                         changeStyle={this.changeStyle.bind()}/>
-                <Header ref={header => {this.header = header;}}/>
+                <Header ref={header => {this.header = header;}} path={this.props.path}/>
                 <Content ref={content => {this.content = content;}} path={this.props.path}/>
             </div>
         );
