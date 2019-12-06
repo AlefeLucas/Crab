@@ -4,7 +4,6 @@ import './Content.css'
 import axios from 'axios'
 import {Link} from "react-router-dom";
 import {paths} from "../../../js/Helper";
-
 export class Content extends Component {
 
     constructor(props) {
@@ -17,7 +16,8 @@ export class Content extends Component {
             planets: [],
             species: [],
             starships: [],
-            vehicles: []
+            vehicles: [],
+            search: ""
         };
         this.getFilms = this.getFilms.bind(this);
         this.getPeople = this.getPeople.bind(this);
@@ -150,18 +150,31 @@ export class Content extends Component {
         }
     };
 
+    onSearchChange(e) {
+        this.setState({
+            search: e.target.value
+        });
+    }
+
+    goto(url) {
+        console.log("History");
+        console.log(this.props.history);
+        //this.props.history.push(url);
+
+    }
+
     render() {
         const {planets} = this.state;
         const planetsList = planets.length ? (
-            planets.map(planets => {
+            planets.filter(obj => this.state.search.length === 0 || obj.name.toUpperCase().includes(this.state.search.toUpperCase())).map(planets => {
                 return (
                     <div className="planets card" key={planets.url}>
                         <div className="card-content">
                             <Link to={'/' + planets.url}>
                                 <span className="card-title"> {planets.name}</span>
                             </Link>
-                            <p><b>Population:</b>{planets.population}</p>
-                            <p><b>Diameter:</b> {planets.diameter}</p>
+                            <p><b>Population: </b>{planets.population}</p>
+                            <p><b>Diameter: </b> {planets.diameter}</p>
                             <p><b>Climate: </b> {planets.climate}</p>
 
                         </div>
@@ -174,7 +187,11 @@ export class Content extends Component {
 
         const {species} = this.state;
         const speciesList = species.length ? (
-            species.map(species => {
+            species.filter(obj => this.state.search.length === 0 || obj.name.toUpperCase().includes(this.state.search.toUpperCase())).map(species => {
+
+                let homeworld = species.homeworld ? species.homeworld.replace('https://swapi.co/api/', '').slice(0, -1) : "";
+                let homelink = (homeworld.length > 0 ?
+                    <Link onClick={e => this.goto(homeworld)}>{homeworld}</Link> : "No info.");
                 return (
                     <div className="species card" key={species.url}>
                         <div className="card-content">
@@ -182,7 +199,7 @@ export class Content extends Component {
                                 <span className="card-title"> {species.name}</span>
                             </Link>
                             <p><b>Classification: </b>{species.classification}</p>
-                            <p><b>Homeworld: </b> {species.homeworld}</p>
+                            <p><b>Homeworld: </b>{homelink}</p>
                             <p><b>Language: </b> {species.language}</p>
                         </div>
                     </div>
@@ -194,7 +211,7 @@ export class Content extends Component {
 
         const {vehicles} = this.state;
         const vehiclesList = vehicles.length ? (
-            vehicles.map(vehicles => {
+            vehicles.filter(obj => this.state.search.length === 0 || obj.name.toUpperCase().includes(this.state.search.toUpperCase())).map(vehicles => {
                 return (
 
                     <div className="vehicles card" key={vehicles.url}>
@@ -215,7 +232,7 @@ export class Content extends Component {
 
         const {films} = this.state;
         const filmsList = films.length ? (
-            films.map(films => {
+            films.filter(obj => this.state.search.length === 0 || obj.name.toUpperCase().includes(this.state.search.toUpperCase())).map(films => {
                 return (
                     <div className="films card" key={films.episode_id}>
                         <div className="card-content">
@@ -234,7 +251,13 @@ export class Content extends Component {
 
         const {people} = this.state;
         const peopleList = people.length ? (
-            people.map(people => {
+            people.filter(obj => this.state.search.length === 0 || obj.name.toUpperCase().includes(this.state.search.toUpperCase())).map(people => {
+
+                let homeworld = people.homeworld ? people.homeworld.replace('https://swapi.co/api/', '').slice(0, -1) : "";
+                let homelink = (homeworld.length > 0 ?
+                    <Link onClick={e => this.goto(homeworld)}>{homeworld}</Link> : "No info.");
+                let species = people.species.length > 0 ? people.species.map(value => value.replace('https://swapi.co/api/', '').slice(0, -1)) : "";
+                let specieslink = (species.length > 0 ? species.map(value =>  <Link onClick={e => this.goto(value)}>{value}</Link>) : "No info.");
                 return (
                     <div className="people card" key={people.url}>
                         <div className="card-content">
@@ -242,8 +265,8 @@ export class Content extends Component {
                             <span className="card-title"> {people.name}</span>
 
                             <p><b>Birth year: </b>{people.birth_year}</p>
-                            <p><b>Homeworld: </b> {people.homeworld}</p>
-                            <p><b>Specie: </b> {people.species}</p>
+                            <p><b>Homeworld: </b> {homelink}</p>
+                            <p><b>Specie: </b> {specieslink}</p>
                             <p><b>Gender: </b> {people.gender}</p>
                         </div>
                     </div>
@@ -255,7 +278,7 @@ export class Content extends Component {
 
         const {starships} = this.state;
         const shipsList = starships.length ? (
-            starships.map(starships => {
+            starships.filter(obj => this.state.search.length === 0 || obj.name.toUpperCase().includes(this.state.search.toUpperCase())).map(starships => {
                 return (
                     <div className="Ships card" key={starships.url}>
                         <div className="card-content">
@@ -271,7 +294,8 @@ export class Content extends Component {
             <div className="center"/>
         );
 
-        let shownList = null;
+        let shownList = [];
+
         switch (this.props.path) {
             case paths.HOME:
                 shownList = <div className="center"/>;
@@ -296,6 +320,7 @@ export class Content extends Component {
                 break;
         }
 
+
         return (
             <div className="content" ref={content => {
                 this.content = content;
@@ -304,7 +329,8 @@ export class Content extends Component {
                     <div className={"search " + this.state.boxShadow} ref={search => {
                         this.search = search;
                     }}>
-                        <input type="text" placeholder="Search"/>
+                        <input onChange={this.onSearchChange.bind(this)} value={this.state.search} type="text"
+                               placeholder="Search"/>
                         <img src={require("./../../images/icon-map-search.png")} alt="Search icon"/>
                     </div>
                     : <span/>}

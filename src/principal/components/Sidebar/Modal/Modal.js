@@ -64,7 +64,9 @@ export class Modal extends Component {
                className="pointer modal-float-image"/>
         </span>
                 <p>{this.state.user ? this.state.user.username : "Julius Caesar"}</p>
-                <button className="modal-button">Change Password</button>
+                <Link to={'/reset'}>
+                    <button className="modal-button">Change Password</button>
+                </Link>
                 <select className="modal-button"
                         onChange={this.changeStyle.bind(this)}>
                     <option defaultValue className="modal-button">Change Faction</option>

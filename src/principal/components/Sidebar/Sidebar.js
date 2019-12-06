@@ -3,6 +3,9 @@ import Profile from './Profile/Profile.js';
 import ListItem from './ListItem/ListItem.js';
 import Modal from './Modal/Modal.js';
 import './Sidebar.css';
+import sithIcon from "../../../images/login/sith.svg";
+import jediIcon from "../../../images/login/jedi.svg"
+import bhIcon from "../../../images/login/bountyhunter.svg"
 
 export class Sidebar extends Component {
 
@@ -56,6 +59,17 @@ export class Sidebar extends Component {
     }
 
     render() {
+        let icon = jediIcon;
+        if (this.props.user != null) {
+            switch (this.props.user.faction) {
+                case "bountyHunter":
+                    icon = bhIcon;
+                    break;
+                case "sith":
+                    icon = sithIcon;
+                    break;
+            }
+        }
         return (
             <aside className="sidebar" ref={aside => {
                 this.sidebar = aside;
@@ -80,28 +94,28 @@ export class Sidebar extends Component {
                             <ListItem history={this.props.history} title="Home" link="/Home"
                                       imageSrc={require("./../../images/icon-awesome-home.png")}
                                       imageAlt="Home icon"/>
-                            <ListItem history={this.props.history}  title="Films" link="/Films"
+                            <ListItem history={this.props.history} title="Films" link="/Films"
                                       imageSrc={require("./../../images/icon-awesome-film.png")}
                                       imageAlt="Films icon"/>
-                            <ListItem history={this.props.history}  title="People" link="/people"
+                            <ListItem history={this.props.history} title="People" link="/people"
                                       imageSrc={require("./../../images/iconfinder_darth_vader_216968.png")}
                                       imageAlt="People icon"/>
-                            <ListItem history={this.props.history}  title="Planets" link="/planets"
+                            <ListItem history={this.props.history} title="Planets" link="/planets"
                                       imageSrc={require("./../../images/caminho-34.png")}
                                       imageAlt="Planets icon"/>
-                            <ListItem history={this.props.history}  title="Species" link="/species"
+                            <ListItem history={this.props.history} title="Species" link="/species"
                                       imageSrc={require("./../../images/uniao-1.png")}
                                       imageAlt="Species icon"/>
                             <ListItem history={this.props.history} title="Starships" link="/starships"
                                       imageSrc={require("./../../images/uniao-2.png")}
                                       imageAlt="Starships icon"/>
-                            <ListItem history={this.props.history}  title="Vehicles" link="/vehicles"
+                            <ListItem history={this.props.history} title="Vehicles" link="/vehicles"
                                       imageSrc={require("./../../images/icon-awesome-space-shuttle.png")}
                                       imageAlt="Vehicles icon"/>
                         </ul>
                     </div>
                     <div className="faction-section">
-                        <img src={require("./../../images/icon-awesome-jedi-order.png")}
+                        <img src={icon}
                              alt="User's faction icon"/>
                     </div>
                 </div>

@@ -13,6 +13,8 @@ export class Home extends Component {
         this.state = {
             user: this.props.user
         };
+
+        console.log("Home constructor");
     }
 
     collapse = (e) => {
@@ -41,7 +43,7 @@ export class Home extends Component {
                         collapse={this.collapse.bind()}
                         changeStyle={this.changeStyle.bind()}/>
                 <Header ref={header => {this.header = header;}} path={this.props.path}/>
-                <Content ref={content => {this.content = content;}} path={this.props.path}/>
+                <Content  history={this.props.history} ref={content => {this.content = content;}} path={this.props.path}/>
             </div>
         );
     }
