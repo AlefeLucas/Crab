@@ -250,7 +250,7 @@ export class Content extends Component {
 
         const {films} = this.state;
         const filmsList = films.length ? (
-            films.filter(obj => this.state.search.length === 0 || obj.name.toUpperCase().includes(this.state.search.toUpperCase())).map(films => {
+            films.filter(obj => this.state.search.length === 0 || obj.title.toUpperCase().includes(this.state.search.toUpperCase())).map(films => {
                 return (
                     <div className="films card" key={films.episode_id}>
                         <div className="card-content">
