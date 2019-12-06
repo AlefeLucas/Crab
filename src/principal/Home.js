@@ -29,7 +29,8 @@ export class Home extends Component {
         }
         this.header.changeStyle(e);
         this.content.changeStyle(e);
-    }
+    };
+
 
     render() {
         return (
@@ -39,7 +40,7 @@ export class Home extends Component {
                         collapse={this.collapse.bind()}
                         changeStyle={this.changeStyle.bind()}/>
                 <Header ref={header => {this.header = header;}}/>
-                <Content ref={content => {this.content = content;}}/>
+                <Content ref={content => {this.content = content;}} path={this.props.path}/>
             </div>
         );
     }

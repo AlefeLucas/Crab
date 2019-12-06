@@ -4,6 +4,16 @@ export const faction = {
     BOUNTY_HUNTER: "bountyHunter"
 };
 
+export const paths = {
+    HOME: "home",
+    FILMS: "film",
+    PEOPLE: "people",
+    PLANETS: "planets",
+    SPECIES: "species",
+    STARSHIPS: "starships",
+    VEHICLES: "vehicles"
+};
+
 
 export let defaultUsers =
     [

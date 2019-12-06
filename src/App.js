@@ -4,7 +4,7 @@ import Home from './principal/Home.js';
 import SignUp from "./js/SignUp.js";
 import Forgot from "./js/Forgot.js";
 import ResetPassword from "./js/ResetPassoword.js";
-import {defaultUsers} from './js/Helper.js';
+import {defaultUsers, paths} from './js/Helper.js';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
@@ -46,7 +46,14 @@ class App extends Component {
                        render={(props) => <Login {...props} users={this.state.users} setUser={this.setUser} user={this.state.user}/>}/>
                 <Route exact path="/signup"
                        render={(props) => <SignUp {...props}  setUser={this.setUser} users={this.state.users} addUser={this.addUser}/>}/>
-                <Route exact path="/home" render={(props) => <Home {...props} user={this.state.user}/>}/>
+                <Route exact path="/home" render={(props) => <Home {...props} user={this.state.user} path={paths.HOME} />}/>
+                <Route exact path="/films" render={(props) => <Home {...props} user={this.state.user} path={paths.FILMS} />}/>
+                <Route exact path="/people" render={(props) => <Home {...props} user={this.state.user} path={paths.PEOPLE} />}/>
+                <Route exact path="/planets" render={(props) => <Home {...props} user={this.state.user} path={paths.PLANETS} />}/>
+                <Route exact path="/species" render={(props) => <Home {...props} user={this.state.user} path={paths.SPECIES} />}/>
+                <Route exact path="/starships" render={(props) => <Home {...props} user={this.state.user} path={paths.STARSHIPS} />}/>
+                <Route exact path="/vehicles" render={(props) => <Home {...props} user={this.state.user} path={paths.VEHICLES} />}/>
+
                 <Route exact path="/forgot" render={(props) => <Forgot {...props} />}/>
                 <Route exact path="/reset" render={(props) => <ResetPassword {...props} />}/>
             </Router>
